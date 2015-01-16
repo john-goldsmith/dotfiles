@@ -1,10 +1,16 @@
-PATH=$PATH:$HOME/bin
+PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
+PATH=$PATH:$HOME/bin
 
 export EDITOR='subl -w'
 
+# Rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 MYSQL=/usr/local/mysql/bin
-export PATH=$PATH:$MYSQL
+# export PATH=$PATH:$MYSQL
+PATH=$PATH:$MYSQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
 source ~/git-completion.bash
@@ -90,7 +96,7 @@ PathFull="\W"
 NewLine="\n"
 Jobs="\j"
 
-export PS1=$Color_Off$White$Color_Off'[ '$Blue'\W'$Color_Off$Yellow'`__git_ps1` '$Color_Off$White\]$Color_Off$Blue' -> '$Color_Off
+export PS1='\n'$Color_Off$White$Color_Off'[ '$Blue'\W'$Color_Off$Yellow'`__git_ps1` '$Color_Off$White\]$Color_Off$Blue' -> '$Color_Off
 
 # Bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -99,9 +105,6 @@ fi
 
 # Load the default .profile
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
-
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Misc
 alias ..="cd .."
@@ -114,17 +117,21 @@ alias source.bashrc="source ~/.bashrc"
 alias sbrc="source ~/.bashrc"
 alias dir="ls -laGp"
 alias open.hosts="subl /etc/hosts"
+alias pg="psql"
+alias open="open . -R"
 
 # Bundler
 alias be="bundle exec"
 alias bi="bundle install"
+alias bu="bundle update"
 
 # Git
 alias gs="git status"
 alias gl="git log --oneline"
-alias gfo="git fetch origin"
+alias gfo="git fetch origin -v"
 alias grh="git reset --hard"
 alias gk="gitk --all"
+alias gco="git checkout"
 # alias gitx=""
 
 # Elder Scrolls Online
@@ -136,8 +143,18 @@ alias goto.eso.commerce="cd ~/Sites/eso/sg-services-commerce"
 alias goto.eso.polling="cd ~/Sites/eso/sg-services-gc-polling"
 alias goto.eso.poller="cd ~/Sites/eso/sg-services-gc-polling"
 alias goto.eso.chef="cd ~/Sites/eso/sg-chef"
+alias goto.eso.harness="cd ~/Sites/eso/eso-harness"
 alias goto.eso="cd ~/Sites/eso/"
+
+# Adaptiv.io
+alias goto.aio="cd ~/Sites/adaptiv"
+alias goto.aio.portal="cd ~/Sites/adaptiv/customer_portal"
+alias goto.aio.harness="cd ~/Sites/adaptiv/harness"
+alias aio="~/Sites/adaptiv/harness/bin/repoman"
 
 # Rails 2
 alias ss="script/server"
 alias sc="script/console"
+
+# Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
