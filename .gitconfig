@@ -3,3 +3,9 @@
 	email = johngoldsm1@gmail.com
 [color]
 	ui = true
+[url "https://"]
+	insteadOf = git://
+[alias]
+	co = checkout
+	s = status
+	l = log --oneline
