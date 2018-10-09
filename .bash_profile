@@ -1,12 +1,18 @@
+source ~/.bashrc
+
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:$HOME/bin
+# PATH=$PATH:$HOME/.composer/vendor/bin
+PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+PATH=$PATH:/Users/jgoldsmith/Library/Python/2.7/bin
 
-export EDITOR='subl -w'
+export EDITOR='code' # Previously 'subl -w'
+export NODE_PATH='/usr/local/lib/node_modules'
 
 # Rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # RVM
 # Load RVM into a shell session *as a function*
@@ -114,21 +120,26 @@ fi
 # Misc
 alias ..="cd .."
 alias goto.sites="cd ~/Sites"
+alias goto.verys="cd ~/Sites/verys"
 alias open.bashprofile="subl ~/.bash_profile"
 alias open.bashrc="subl ~/.bashrc"
 alias source.bashprofile="source ~/.bash_profile"
 alias sbp="source ~/.bash_profile"
 alias source.bashrc="source ~/.bashrc"
 alias sbrc="source ~/.bashrc"
-alias ls="ls -laGp"
+alias ls="ls -laGph"
 alias open.hosts="subl /etc/hosts"
 alias pg="psql"
 alias open="open . -R"
+alias rm="rm -iv"
 
 # Bundler
 alias be="bundle exec"
 alias bi="bundle install"
 alias bu="bundle update"
+
+# PHP
+# alias phart="php artisan"
 
 # Git
 # alias gs="git status"
@@ -137,3 +148,4 @@ alias bu="bundle update"
 # alias grh="git reset --hard"
 # alias gk="gitk --all"
 # alias gco="git checkout"
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
