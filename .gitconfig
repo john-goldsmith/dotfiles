@@ -8,7 +8,7 @@
 [alias]
 	co = checkout
 	cob = checkout -b
-	s = status
+	s = status -s
 	l = log --graph --decorate --oneline --abbrev-commit
   fo = fetch origin --verbose
   rh = reset --hard
@@ -17,7 +17,7 @@
 	quotepath = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

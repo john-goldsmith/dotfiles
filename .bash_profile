@@ -23,6 +23,7 @@ eval "$(rbenv init -)"
 # export PATH=$PATH:$MYSQL
 # PATH=$PATH:$MYSQL
 # export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 source ~/git-completion.bash
 
@@ -120,18 +121,18 @@ fi
 # Misc
 alias ..="cd .."
 alias goto.sites="cd ~/Sites"
-alias goto.verys="cd ~/Sites/verys"
-alias open.bashprofile="subl ~/.bash_profile"
-alias open.bashrc="subl ~/.bashrc"
+alias open.bashprofile="$EDITOR ~/.bash_profile"
+alias open.bashrc="$EDITOR ~/.bashrc"
 alias source.bashprofile="source ~/.bash_profile"
 alias sbp="source ~/.bash_profile"
 alias source.bashrc="source ~/.bashrc"
 alias sbrc="source ~/.bashrc"
 alias ls="ls -laGph"
-alias open.hosts="subl /etc/hosts"
+alias open.hosts="$EDITOR /etc/hosts"
 alias pg="psql"
 alias open="open . -R"
 alias rm="rm -iv"
+alias buuc="brew update && brew upgrade && brew cleanup"
 
 # Bundler
 alias be="bundle exec"
@@ -149,3 +150,10 @@ alias bu="bundle update"
 # alias gk="gitk --all"
 # alias gco="git checkout"
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# NPM
+alias npms="cat ./package.json | jq -r '.scripts | to_entries[] | [.key] | @csv'"
+alias npmnuke="rm -rf ./node_modules && rm ./package-lock.json"
+
+# Docker
+alias dockerc="docker-compose"
