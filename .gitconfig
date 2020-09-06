@@ -9,7 +9,7 @@
 	co = checkout
 	cob = checkout -b
 	s = status -s
-	l = log --graph --decorate --oneline --abbrev-commit
+	l = log --graph --decorate --oneline --abbrev-commit # --abbrev-commit --date=relative
   fo = fetch origin --verbose
   rh = reset --hard
 [core]
